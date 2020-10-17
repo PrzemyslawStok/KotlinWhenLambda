@@ -1,3 +1,4 @@
+import java.lang.Math.abs
 import java.lang.Math.exp
 
 fun main() {
@@ -42,13 +43,28 @@ fun main() {
 
 fun example1(){
     //x-e^(-x) = 0
-    var x = 0.0
-    var result = x - exp(-x)
-    println("$x-e^(-$x)=${result}")
-    while(x<100){
-        x = x+1
-        //println(x)
+    val equation: (Double)->Double = {x:Double-> x - exp(-x)}
+
+    var step = 0
+    val maxStep = 100000
+
+    var x = -1.0
+    val dx = 0.0001
+
+    while(x<2 || step>100000){
+        val result = equation(x)
+
+        if(abs(result)<0.001) {
+            println("$x-e^(-$x)=${result}")
+            break
+        }
+
+        x += dx
+        step++
     }
+
+    var lambda1: (Int,String)->Double = {a:Int,b:String->10.0}
+    val result = lambda1(5,"asdfasdf")
 }
 
 
