@@ -21,13 +21,6 @@ fun main() {
 
     z = if(x>y) 5 else 10
 
-    val a = 20
-    val b = 5
-
-    if(a>b)
-        println("$a>$b")
-    else
-        println("$a<=$b")
-
-
 }
+
+
