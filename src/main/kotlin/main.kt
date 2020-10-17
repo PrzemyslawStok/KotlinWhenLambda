@@ -8,9 +8,9 @@ fun main() {
         else->println("kolejna funkcja")
     }
 
-    val y = 5
+    val y = 21
 
-    val z = when(y){
+    var z = when(y){
         0->2
         in 20..40->2
         2,3,4,5,6->5
@@ -18,5 +18,16 @@ fun main() {
     }
 
     println("z wynosi ${z}")
+
+    z = if(x>y) 5 else 10
+
+    val a = 20
+    val b = 5
+
+    if(a>b)
+        println("$a>$b")
+    else
+        println("$a<=$b")
+
 
 }
